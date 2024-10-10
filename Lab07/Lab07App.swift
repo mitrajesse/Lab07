@@ -11,7 +11,8 @@ import SwiftUI
 struct Lab07App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticleView()
+                .environmentObject(ArticleViewModel())  // Injecting the view model here
         }
     }
 }
