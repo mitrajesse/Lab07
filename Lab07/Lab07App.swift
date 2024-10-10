@@ -12,7 +12,7 @@ struct Lab07App: App {
     var body: some Scene {
         WindowGroup {
             ArticleView()
-                .environmentObject(ArticleViewModel())  // Injecting the view model here
+                .environmentObject(ArticleViewModel())
         }
     }
 }
