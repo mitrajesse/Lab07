@@ -11,8 +11,8 @@ import SwiftUI
 struct Lab07App: App {
     var body: some Scene {
         WindowGroup {
-            ArticleView()
-                .environmentObject(ArticleViewModel())
+            let articleViewModel = ArticleViewModel()
+            ArticleView(articleViewModel: articleViewModel)
         }
     }
 }

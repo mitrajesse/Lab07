@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticleView: View {
-    @EnvironmentObject var articleViewModel: ArticleViewModel
+    var articleViewModel: ArticleViewModel
 
     var body: some View {
         GeometryReader { geometry in
@@ -36,6 +36,7 @@ struct ArticleView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: geometry.size.width * 0.1)
+                            .foregroundColor(.red)
                             .onTapGesture {
                                 articleViewModel.markAsFavorite()
                             }
@@ -63,7 +64,6 @@ struct ArticleView: View {
 
 struct ArticleView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleView()
-            .environmentObject(ArticleViewModel())
+        ArticleView(articleViewModel: ArticleViewModel())
     }
 }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class ArticleViewModel: ObservableObject {
-    @Published var model: Article
+@Observable class ArticleViewModel {
+    var model: Article
 
     static func createArticle() -> Article {
         return Article(
@@ -41,7 +41,7 @@ class ArticleViewModel: ObservableObject {
             url: "https://www.indeed.com/career-advice/career-development/how-to-get-along-with-coworkers"
         )
     }
-    
+
     init() {
         self.model = ArticleViewModel.createArticle()
     }
@@ -50,4 +50,3 @@ class ArticleViewModel: ObservableObject {
         model.isFavorite = true
     }
 }
-
